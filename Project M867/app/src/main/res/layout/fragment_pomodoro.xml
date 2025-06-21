@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pomodoroLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <!-- Левый NumberPicker (работа) -->
+    <LinearLayout
+        android:id="@+id/workPickerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/progressIndicator"
+        app:layout_constraintBottom_toBottomOf="@id/progressIndicator"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Работа (мин)"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <NumberPicker
+            android:id="@+id/npWork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Правый NumberPicker (перерыв) -->
+    <LinearLayout
+        android:id="@+id/breakPickerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/progressIndicator"
+        app:layout_constraintBottom_toBottomOf="@id/progressIndicator"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Перерыв (мин)"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <NumberPicker
+            android:id="@+id/npBreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Индикатор прогресса (кружок) -->
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressIndicator"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:indeterminate="false"
+        app:indicatorSize="12dp"
+        app:trackThickness="70dp"
+        app:indicatorInset="0dp"
+        app:indicatorDirectionCircular="clockwise"
+        app:trackColor="#DDDDDD"
+        app:indicatorColor="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/phaseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Работа"
+        android:textSize="28sp"
+        android:fontFamily="@font/nunito_bold"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintTop_toBottomOf="@id/progressIndicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_bold"
+        android:text="25:00"
+        android:textSize="46sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/phaseLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartReset"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_regular"
+        android:text="Старт"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStopSound"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_regular"
+        android:text="Отключить звук"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnStartReset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Надпись перед кнопками билетов -->
+    <TextView
+        android:id="@+id/tvTicketsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Купоны на отдых\n1 купон за 10 очков - 1 минута"
+        android:textSize="18sp"
+        android:fontFamily="@font/nunito_bold"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:padding="12dp"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/btnStopSound"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Кнопка 1 билет (центр сверху) -->
+    <Button
+        android:id="@+id/btnTicket1"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/rubik_regular"
+        android:text="1 купон"
+        android:textSize="16sp"
+        android:minWidth="100dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTicketsLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Группа кнопок 3 и 5 билетов (снизу) -->
+    <LinearLayout
+        android:id="@+id/bottomTicketButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/btnTicket1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnTicket3"
+            android:layout_width="140dp"
+            android:layout_height="48dp"
+            android:fontFamily="@font/rubik_regular"
+            android:text="3 купона"
+            android:textSize="16sp"
+            android:minWidth="100dp"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/btnTicket5"
+            android:layout_width="140dp"
+            android:layout_height="48dp"
+            android:fontFamily="@font/rubik_regular"
+            android:text="5 купонов"
+            android:textSize="16sp"
+            android:minWidth="100dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDistractionTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/bottomTicketButtons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Продолжить"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvDistractionTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

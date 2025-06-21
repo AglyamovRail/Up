@@ -1,0 +1,12 @@
+<resources>
+    <attr name="on_surface" format="reference|color"/>
+
+    <declare-styleable name="ChartTheme">
+        <attr name="chartLineColor" format="color|reference" />
+        <attr name="chartCircleColor" format="color|reference" />
+        <attr name="chartTextColor" format="color|reference" />
+        <attr name="chartGridColor" format="color|reference" />
+    </declare-styleable>
+
+
+</resources>

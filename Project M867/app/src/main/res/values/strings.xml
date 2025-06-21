@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">Вверх!</string>
+    <string name="button_skip">Skip</string>
+    <string name="title_correct">Correct!</string>
+    <string name="button_continue">Continue</string>
+    <string name="title_wrong">Wrong!</string>
+
+    <string-array name="period_options">
+        <item>Неделя</item>
+        <item>Месяц</item>
+        <item>3 месяца</item>
+        <item>6 месяцев</item>
+        <item>Год</item>
+        <item>Все время</item>
+    </string-array>
+
+</resources>

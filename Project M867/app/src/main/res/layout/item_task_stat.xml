@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:background="?attr/colorSurfaceVariant"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нет данных для отображения"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvStatTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Статистика задач"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="8dp"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chartTasks"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- УДАЛЕН СПИННЕР -->
+
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- Первая строка с цветом и кнопкой удаления -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Круг цвета привычки -->
+        <View
+            android:id="@+id/viewColor"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_circle"/>
+
+        <!-- Кнопка удаления справа -->
+        <ImageButton
+            android:id="@+id/btnDeleteHabit"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Удалить привычку"/>
+
+        <!-- Название привычки (может занимать несколько строк) -->
+        <TextView
+            android:id="@+id/tvHabitName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/btnDeleteHabit"
+            android:layout_toEndOf="@id/viewColor"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:text="Название привычки"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+    </RelativeLayout>
+
+    <!-- Описание привычки -->
+    <TextView
+        android:id="@+id/tvHabitDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="36dp"
+        android:text="Описание привычки"
+        android:textSize="14sp"
+        android:textColor="#808080"
+        android:maxLines="5"
+        android:ellipsize="end"/>
+
+    <!-- Строка с ударным режимом -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <!-- Основной текст слева -->
+        <LinearLayout
+            android:id="@+id/streak_text_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvStreakIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="🔥"/>
+
+            <TextView
+                android:id="@+id/tvSimpleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Ударный режим: "
+                android:fontFamily="@font/rubik_regular"
+                android:layout_marginStart="4dp"/>
+
+            <TextView
+                android:id="@+id/tvStreakCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="16sp"
+                android:fontFamily="@font/rubik_regular"/>
+
+        </LinearLayout>
+
+        <!-- Кнопка восстановления справа -->
+        <Button
+            android:id="@+id/btnRestoreStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="Восстановить"
+            android:visibility="gone"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/green"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_marginStart="8dp"/>
+    </RelativeLayout>
+</LinearLayout>

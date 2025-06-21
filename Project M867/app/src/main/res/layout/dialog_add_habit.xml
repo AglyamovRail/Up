@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flexbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Существующие поля -->
+    <EditText
+        android:id="@+id/etHabitName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Название привычки"
+        android:inputType="textCapSentences"
+        android:maxLines="1"/>
+
+    <EditText
+        android:id="@+id/etHabitDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Описание"
+        android:inputType="textCapSentences"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выберите цвет:"
+        android:layout_marginTop="16dp"/>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/colorContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        flexbox:flexWrap="wrap"
+        flexbox:justifyContent="center"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Новые поля для периодичности -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Периодичность:"
+        android:layout_marginTop="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupPeriod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Вариант 1: Каждый день -->
+        <RadioButton
+            android:id="@+id/radioDaily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Каждый день"/>
+
+        <!-- Вариант 2: Через день -->
+        <RadioButton
+            android:id="@+id/radioEveryOtherDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Через день"/>
+
+        <!-- Вариант 3: Свой интервал -->
+        <RadioButton
+            android:id="@+id/radioCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Свой интервал"/>
+    </RadioGroup>
+
+    <!-- Поле для ввода дней (изначально скрыто) -->
+    <LinearLayout
+        android:id="@+id/customDaysContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Каждые"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/etDaysCount"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="дней"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</LinearLayout>

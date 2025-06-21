@@ -1,0 +1,165 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="16dp"
+    android:background="@drawable/bg_stat_card">
+
+    <!-- Заголовок карточки -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Статистика таймера"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginBottom="12dp"
+        android:textColor="?attr/colorOnSurface" />
+
+    <!-- Общее время -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Общее время⏳: "
+            android:fontFamily="@font/nunito_semi_bold"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnSurface"
+            android:gravity="start"/>
+
+        <TextView
+            android:id="@+id/tvTotalFocus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 мин"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- Завершено циклов -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Завершено циклов🔁: "
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:textColor="?attr/colorOnSurface"
+            android:gravity="start"/>
+
+        <TextView
+            android:id="@+id/tvCompletedSessions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- Текущая серия -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Текущая серия🔥:"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:textColor="?attr/colorOnSurface"
+            android:gravity="start"/>
+
+        <TextView
+            android:id="@+id/tvCurrentStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- Максимальная серия -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Макс. серия🏆:"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:textColor="?attr/colorOnSurface"
+            android:gravity="start"/>
+
+        <TextView
+            android:id="@+id/tvMaxStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- Круговая диаграмма -->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chartTickets"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Кастомная легенда -->
+    <include
+        layout="@layout/custom_pie_legend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Сообщение, если нет данных -->
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нет данных для отображения"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+</LinearLayout>

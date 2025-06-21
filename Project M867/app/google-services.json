@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "744700384338",
+    "project_id": "laziness-e218d",
+    "storage_bucket": "laziness-e218d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744700384338:android:613e6d6e386397271cfb8b",
+        "android_client_info": {
+          "package_name": "com.example.m867"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByunxrh8N3OQLDYD8pYDL-XIFctEvb0ZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

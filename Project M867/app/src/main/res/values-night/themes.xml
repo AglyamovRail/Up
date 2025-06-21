@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.M867" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Статус-бар -->
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Цвета кнопок -->
+        <item name="colorPrimary">@color/turquoise</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <!-- Цвета поверхности и текста -->
+        <item name="colorSurface">@color/surface_color_dark</item>
+        <item name="colorOnSurface">@color/on_surface_dark</item>
+        <item name="colorOutline">@color/divider_color</item>
+        <!-- В обе темы добавьте: -->
+        <item name="android:windowBackground">?attr/colorSurface</item>
+        <item name="android:colorBackground">?attr/colorSurface</item>
+
+        <item name="colorSurfaceVariant">@color/surface_color_dark</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_dark</item>
+
+        <item name="chartLineColor">@color/turquoise</item>
+        <item name="chartCircleColor">@color/purple_500</item>
+        <item name="chartTextColor">@color/white</item>
+        <item name="chartGridColor">@color/divider_color</item>
+
+
+    </style>
+
+
+    <!-- Добавьте этот стиль -->
+    <style name="Theme.M867" parent="Base.Theme.M867" />
+</resources>
