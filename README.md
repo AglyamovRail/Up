@@ -1,6 +1,6 @@
 # Up - Приложение для борьбы с прокрастинацией
 
-<img src="screenshots/main_preview.jpg" width="250" align="right" hspace="20">
+<img src="screenshots/logo.png" width="250" align="right" hspace="20">
 
 
 Приложение для повышения продуктивности с системой геймификации. Управляйте задачами, формируйте привычки и работайте по таймеру Pomodoro, получая очки за результаты.
