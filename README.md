@@ -47,12 +47,6 @@
   <img src="screenshots/habits.png" width="200" alt="Привычки">
 </div>
 
-<div aligh="center">
-  <img src="screenshots/task_stats.png" width="200" alt="Статистика задач">
-  <img src="screenshots/timer_stats.png" width="200" alt="Статистика Таймера">
-  <img src="screenshots/habit_stats.png" width="200" alt="Статистика привычек">
-</div>
-
 ---
 
 ## ⚙️ Установка
